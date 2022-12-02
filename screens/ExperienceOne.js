@@ -1,3 +1,4 @@
+import store from '../screens/store.js';
 import { StatusBar } from 'expo-status-bar';
 import React from "react";
 import { useCallback } from 'react';
@@ -5,15 +6,15 @@ import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, To
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import colors from '../assets/colors/colors';
-import Icon from 'react-native-vector-icons/Ionicons';
-import TextBox from '../TextBox'
-import Logo from '../assets/components/logo.svg';
+import Shapes from '../assets/components/shapes.svg'
 
 SplashScreen.preventAutoHideAsync();
-{/* <Icon name="ios-arrow-forward-outline" size={30} color={colors.black} /> */ }
+
+store.setState("textValue", "");
 
 export default function ExperienceOne({ navigation }) {
   const [text, onChangeText] = React.useState(null);
+  const [textValue, setTextValue] = store.useState("textValue");
   const [fontsLoaded] = useFonts({
     'Mont-Bold': require('../assets/fonts/Mont-Trial-Bold.ttf'),
     'Mont-Black': require('../assets/fonts/Mont-Trial-Black.ttf'),
@@ -35,49 +36,49 @@ export default function ExperienceOne({ navigation }) {
     <>
       <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
         <View style={styles.logoIcon}>
-          <Logo width={180} height={38} />
-        </View>
-        <View style={styles.contentContainer}>
+          <Shapes width={100} height={'100%'} />
           <View style={styles.title}>
-            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 30, paddingBottom: 10 }}>
-              Create your
+            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, paddingBottom: 10 }}>
+              Create your 
             </Text>
-            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 30, }}>
-              profile
+            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, }}>
+            profile
             </Text>
           </View>
+        </View>
+        <View style={styles.contentContainer}>
           <View style={styles.description}>
-            <View style={{paddingBottom: 40}}>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 35, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+            <View style={{paddingBottom: '15%'}}>
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
                 Let us start by  
               </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 35, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
                 adding a new
               </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 35, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
                 experience.
               </Text>
             </View>
             <View>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
                 This is an item on a traditional resume 
               </Text>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, color: colors.black, maxWidth: 300, paddingBottom: 15}}>
+              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15}}>
                 such as a profession, degree, club, etc.
               </Text>
             </View>
             <TextInput
               style={styles.input}
-              onChangeText={onChangeText}
+              onChangeText={(val) => setTextValue(val)}
               value={text}
-              placeholder='Enter experience here...'
+              placeholder='i.e. Software Engineer, Bartender...'
             />
+            <View style={styles.appButton}>
+              <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.appButtonContainer}>
+                <Text style={styles.appButtonText}>Next</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={styles.appButton}>
-            <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.appButtonContainer}>
-              <Text style={styles.appButtonText}>Next</Text>
-            </TouchableOpacity>
-        </View>
         </View>
       </SafeAreaView>
       <StatusBar style="auto" />
@@ -87,14 +88,19 @@ export default function ExperienceOne({ navigation }) {
 
 const styles = StyleSheet.create({
   appButton: {
-    paddingTop: 40
+    paddingTop: '7%'
   },
   appButtonContainer: {
     elevation: 8,
-    backgroundColor: "#000",
+    backgroundColor: "#34495E",
     borderRadius: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 105
+    paddingVertical: '7%',
+    paddingHorizontal: 105,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 1,
+    elevation: 10,
+    shadowRadius: '2%',
+    shadowOffset : { width: '-1%', height: '15%'},
   },
   appButtonText: {
     fontSize: 18,
@@ -105,7 +111,11 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#fff',
+    alignItems: 'center',
+    paddingTop: '40%'
+
     // flexDirection: 'column',
     // backgroundColor: '#fff',
     // alignItems: 'center',
@@ -116,11 +126,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'flex-start',
-    paddingLeft: 50
   },
   logoIcon: {
-    paddingLeft: 30,
-    paddingBottom: 40,
+    height: '20%',
+    flexDirection:'row',
+    paddingTop: '7%',
+    paddingBottom: '10%',
+    paddingRight: '45%',  
+    paddingLeft: '15%',
+    alignItems: 'center',
+    marginBottom: '7%'
   },
 
   logo: {
@@ -130,16 +145,17 @@ const styles = StyleSheet.create({
   title: {
     backgroundColor: '#fff',
     justifyContent: 'space-evenly',
+    paddingTop: '7%'
   },
   description: {
-    paddingTop: 40,
+    paddingTop: '10%',
     //position: 'absolute', // add if dont work with above
   },
   input: {
-    height: 40,
-    borderWidth: 2,
-    borderRadius: 10, 
-    padding: 10,
-    paddingLeft: 20,
+    height: 50,
+   borderWidth: 2,
+   borderRadius: 20,
+   padding: 10,
+   paddingLeft: 20,
   },
 });

@@ -59,7 +59,7 @@ export default function HomeScreen({ navigation }) {
           <TouchableOpacity onPress={() => navigation.navigate("ExperienceOne")} style={styles.appButtonContainer}>
             <Text style={styles.appButtonText}>Begin</Text>
           </TouchableOpacity>
-        </View>
+          </View>
       </SafeAreaView>
       <StatusBar style="auto" />
     </>
@@ -72,10 +72,15 @@ const styles = StyleSheet.create({
   },
   appButtonContainer: {
     elevation: 8,
-    backgroundColor: "#000",
+    backgroundColor: "#34495E",
     borderRadius: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 120
+    paddingVertical: '5%',
+    paddingHorizontal: '30%',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 1,
+    elevation: 10,
+    shadowRadius: '2%',
+    shadowOffset : { width: '-1%', height: '15%'},
   },
   appButtonText: {
     fontSize: 18,
@@ -92,15 +97,15 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   logoIcon: {
-    paddingRight: 150,
-    paddingTop: 50,
+    paddingRight: '40%',
+    paddingTop: '15%',
   },
   logo: {
     flexDirection: "row",
     alignItems: "center",
   },
   title: {
-    paddingRight: 80,
+    paddingRight: '19%',
     paddingTop: 50,
     paddingBottom: 40,
   },

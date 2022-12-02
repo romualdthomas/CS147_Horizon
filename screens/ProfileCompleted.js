@@ -5,9 +5,7 @@ import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, To
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import colors from '../assets/colors/colors';
-import Icon from 'react-native-vector-icons/Ionicons';
 import TextBox from '../TextBox'
-import Logo from '../assets/components/logo.svg';
 import Shapes from '../assets/components/shapes.svg'
 import store from './store';
 
@@ -17,10 +15,7 @@ const userInterest = store.getState('newInterest');
 
 store.setState('newInterestLike', '');
 
-export default function LikesFour({ navigation }) {
-  const [text, onChangeText] = React.useState(null);
-  const [newInterestLike, setNewInterestLike] = store.useState("newInterestLike");
-
+export default function ProfileCompleted({ navigation }) {
 
   const [fontsLoaded] = useFonts({
     'Mont-Bold': require('../assets/fonts/Mont-Trial-Bold.ttf'),
@@ -45,10 +40,10 @@ export default function LikesFour({ navigation }) {
         <View style={styles.logoIcon}>
           <Shapes width={100} height={'100%'} />
           <View style={styles.title}>
-            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, paddingBottom: 10 }}>
+            <Text style={{ fontFamily: 'Mont-Regular', color: colors.white, fontSize: 24, paddingBottom: 10 }}>
               Create your 
             </Text>
-            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, }}>
+            <Text style={{ fontFamily: 'Mont-Regular', color: colors.white, fontSize: 24, }}>
             profile
             </Text>
           </View>
@@ -57,32 +52,23 @@ export default function LikesFour({ navigation }) {
           <View style={styles.description}>
             <View style={{paddingBottom: '15%'}}>
               <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                Great! Now,   
+                Profile   
               </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-              what interests you about
-              </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                {userInterest.value}?
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300}}>
+                Completed!
               </Text>
             </View>
             <View>
               <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                What aspects of this interest 
+                Let’s take a look at your  
               </Text>
               <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15}}>
-                make you want to explore it?
+                Career Backpack profile!
               </Text>
             </View>
-            <TextInput
-              style={styles.input}
-              onChangeText={(val) => setNewInterestLike(val)}
-              value={text}
-              placeholder='i.e. Something new everyday...'
-            />
             <View style={styles.appButton}>
-              <TouchableOpacity onPress={() => navigation.navigate("ProfileCompleted")} style={styles.appButtonContainer}>
-                <Text style={styles.appButtonText}>Next</Text>
+              <TouchableOpacity onPress={() => navigation.navigate("TabNavigator")} style={styles.appButtonContainer}>
+                <Text style={styles.appButtonText}>View Profile</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -102,7 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#34495E",
     borderRadius: 10,
     paddingVertical: '7%',
-    paddingHorizontal: 105,
+    paddingHorizontal: 90,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 1,
     elevation: 10,
@@ -152,12 +138,5 @@ const styles = StyleSheet.create({
   },
   description: {
     paddingTop: '10%',
-  },
-  input: {
-    height: 50,
-    borderWidth: 2,
-    borderRadius: 20,
-    padding: 10,
-    paddingLeft: 20,
   },
 });
