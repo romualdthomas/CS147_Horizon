@@ -199,7 +199,7 @@ import Wizard from '../screens/Wizard.js';
 import Profile_Pic from '../assets/components/profile_pic.svg';
 import Crown from '../assets/components/crown.svg'
 
-export default function Messages() {
+export default function Messages({navigation}) {
     const [notifModalVisible, setNotifModalVisible] = React.useState(false);
 
     const [fontsLoaded] = useFonts({
@@ -263,6 +263,7 @@ export default function Messages() {
                 }} >
                     <View style={{ paddingTop: '2%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
                         <Pressable
+                            onPress={() => navigation.navigate("BobSurferProfile")}
                             style={({ pressed }) => [
                                 {
                                     backgroundColor: pressed

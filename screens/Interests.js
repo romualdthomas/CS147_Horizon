@@ -10,7 +10,7 @@ import Interests from '../assets/components/interests_title.svg';
 SplashScreen.preventAutoHideAsync();
 
 
-export default function Experiences() {
+export default function Interests() {
 
     const [fontsLoaded] = useFonts({
         'Mont-Bold': require('../assets/fonts/Mont-Trial-Bold.ttf'),

@@ -14,6 +14,7 @@ import ProfileCompleted from './screens/ProfileCompleted.js';
 import ProfileWelcomeScreen from './screens/ProfileWelcomeScreen.js';
 import HomeFeed from './screens/HomeFeed.js';
 import Messages from './screens/Messages.js'
+import BobSurfer from './screens/BobSurferProfile.js'
 import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, TouchableOpacity, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -33,23 +34,23 @@ export default function App() {
           tabBarStyle: { backgroundColor: colors.white, borderRadius: '20%' },
         }}
         tabBarOptions={{
-          activeTintColor:'#D3D3D3',
+          activeTintColor: '#D3D3D3',
           inactiveTintColor: colors.black,
           showLabel: false,
         }}
       >
         <Tab.Screen name="HomeFeed" component={HomeFeed} options={{
-                headerShown: false,
-                tabBarIcon: ({color}) => <Icon name="ios-home-sharp" color={color} size={20}></Icon>
-              }}/>
+          headerShown: false,
+          tabBarIcon: ({ color }) => <Icon name="ios-home-sharp" color={color} size={20}></Icon>
+        }} />
         <Tab.Screen name="Messages" component={Messages} options={{
-                headerShown: false,
-                tabBarIcon: ({color}) => <Icon name="ios-chatbubble-sharp" color={color} size={20}></Icon>
-              }}/>
+          headerShown: false,
+          tabBarIcon: ({ color }) => <Icon name="ios-chatbubble-sharp" color={color} size={20}></Icon>
+        }} />
         <Tab.Screen name="Profile" component={ProfileWelcomeScreen} options={{
-                headerShown: false,
-                tabBarIcon: ({color}) => <Icon name="ios-person-sharp" color={color} size={20}></Icon>
-              }}/>
+          headerShown: false,
+          tabBarIcon: ({ color }) => <Icon name="ios-person-sharp" color={color} size={20}></Icon>
+        }} />
       </Tab.Navigator>
     )
   }
@@ -109,6 +110,13 @@ export default function App() {
               }}
             />
             <Stack.Screen
+              name="BobSurferProfile"
+              component={BobSurfer}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
               name="TabNavigator"
               component={TabNavigator}
               options={{
@@ -128,7 +136,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
-    
+
   }
 
-}) 
+})
