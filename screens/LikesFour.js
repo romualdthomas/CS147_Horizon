@@ -46,21 +46,21 @@ export default function LikesFour({ navigation }) {
           <Shapes width={100} height={'100%'} />
           <View style={styles.title}>
             <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, paddingBottom: 10 }}>
-              Create your 
+              Create your
             </Text>
             <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, }}>
-            profile
+              profile
             </Text>
           </View>
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.description}>
-            <View style={{paddingBottom: '15%'}}>
+            <View style={{ paddingBottom: '15%' }}>
               <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                Great! Now,   
+                Great! Now,
               </Text>
               <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-              what interests you about
+                what interests you about
               </Text>
               <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
                 {userInterest.value}?
@@ -68,9 +68,9 @@ export default function LikesFour({ navigation }) {
             </View>
             <View>
               <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                What aspects of this interest 
+                What aspects of this interest
               </Text>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15}}>
+              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15 }}>
                 make you want to explore it?
               </Text>
             </View>
@@ -79,6 +79,7 @@ export default function LikesFour({ navigation }) {
               onChangeText={(val) => setNewInterestLike(val)}
               value={text}
               placeholder='i.e. Something new everyday...'
+              
             />
             <View style={styles.appButton}>
               <TouchableOpacity onPress={() => navigation.navigate("ProfileCompleted")} style={styles.appButtonContainer}>
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     elevation: 10,
     shadowRadius: '2%',
-    shadowOffset : { width: '-1%', height: '15%'},
+    shadowOffset: { width: '-1%', height: '15%' },
   },
   appButtonText: {
     fontSize: 18,
@@ -132,10 +133,10 @@ const styles = StyleSheet.create({
   },
   logoIcon: {
     height: '20%',
-    flexDirection:'row',
+    flexDirection: 'row',
     paddingTop: '7%',
     paddingBottom: '10%',
-    paddingRight: '45%',  
+    paddingRight: '45%',
     paddingLeft: '15%',
     alignItems: 'center',
     marginBottom: '7%'
@@ -159,5 +160,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     paddingLeft: 20,
+    maxWidth: 260
   },
 });

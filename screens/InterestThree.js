@@ -41,28 +41,28 @@ export default function ExperienceOne({ navigation }) {
           <Shapes width={100} height={'100%'} />
           <View style={styles.title}>
             <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, paddingBottom: 10 }}>
-              Create your 
+              Create your
             </Text>
             <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, }}>
-            profile
+              profile
             </Text>
           </View>
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.description}>
-            <View style={{paddingBottom: '15%'}}>
+            <View style={{ paddingBottom: '15%' }}>
               <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
                 Now, let us add
               </Text>
               <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                 a new interest.
+                a new interest.
               </Text>
             </View>
             <View>
               <Text style={{ fontFamily: 'Mont-Regular', fontSize: 15, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
                 This could be a hobby, an aspiration,
               </Text>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 15, color: colors.black, maxWidth: 300, paddingBottom: 15}}>
+              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 15, color: colors.black, maxWidth: 300, paddingBottom: 15 }}>
                 or anything you would like to explore.
               </Text>
             </View>
@@ -70,7 +70,8 @@ export default function ExperienceOne({ navigation }) {
               style={styles.input}
               onChangeText={(val) => setNewInterest(val)}
               value={text}
-              placeholder='i.e. Dealing with people, taking risks...'
+              placeholder='i.e. Coding, Cooking, Dancing...'
+            
             />
             <View style={styles.appButton}>
               <TouchableOpacity onPress={() => navigation.navigate("LikesFour")} style={styles.appButtonContainer}>
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     elevation: 10,
     shadowRadius: '2%',
-    shadowOffset : { width: '-1%', height: '15%'},
+    shadowOffset: { width: '-1%', height: '15%' },
   },
   appButtonText: {
     fontSize: 18,
@@ -124,10 +125,10 @@ const styles = StyleSheet.create({
   },
   logoIcon: {
     height: '20%',
-    flexDirection:'row',
+    flexDirection: 'row',
     paddingTop: '7%',
     paddingBottom: '10%',
-    paddingRight: '45%',  
+    paddingRight: '45%',
     paddingLeft: '15%',
     alignItems: 'center',
     marginBottom: '7%'
@@ -151,5 +152,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     paddingLeft: 20,
+    maxWidth: 280
   },
 });

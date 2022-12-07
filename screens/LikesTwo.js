@@ -2,7 +2,7 @@ import store from '../screens/store.js';
 import { StatusBar } from 'expo-status-bar';
 import React from "react";
 import { useCallback } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import colors from '../assets/colors/colors';
@@ -37,56 +37,59 @@ export default function LikesTwo({ navigation }) {
   }
   return (
     <>
-      <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
-        <View style={styles.logoIcon}>
-          <Shapes width={100} height={'100%'} />
-          <View style={styles.title}>
-            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, paddingBottom: 10 }}>
-              Create your 
+        <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
+
+          <View style={styles.logoIcon}>
+            <Shapes width={100} height={'100%'} />
+            <View style={styles.title}>
+              <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, paddingBottom: 10 }}>
+                Create your
             </Text>
-            <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, }}>
-            profile
+              <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, }}>
+                profile
             </Text>
-          </View>
-        </View>
-        <View style={styles.contentContainer}>
-          <View style={styles.description}>
-            <View style={{paddingBottom: '15%'}}>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                What do you  
-              </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                like about this
-              </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                experience?
-              </Text>
-            </View>
-            <View>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                What aspects of this experience were 
-              </Text>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 20}}>
-                particularily enjoyable?
-              </Text>
-            </View>
-          
-            <Text style={{ fontFamily: 'Mont-Bold', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 20, textAlign:"center"}}>{userExperience.value}</Text>
-          
-            <TextInput
-              style={styles.input}
-              onChangeText={(val) => setLikeText(val)}
-              value={text}
-              placeholder='i.e. Dealing with people, taking risks...'
-            />
-            <View style={styles.appButton}>
-              <TouchableOpacity onPress={() => navigation.navigate("InterestThree")} style={styles.appButtonContainer}>
-                <Text style={styles.appButtonText}>Next</Text>
-              </TouchableOpacity>
             </View>
           </View>
-        </View>
-      </SafeAreaView>
+
+          <View style={styles.contentContainer}>
+            <View style={styles.description}>
+              <View style={{ paddingBottom: '15%' }}>
+                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                  What do you
+              </Text>
+                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                  like about this
+              </Text>
+                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300 }}>
+                  experience?
+              </Text>
+              </View>
+              <View>
+                <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                  What aspects of this experience were
+              </Text>
+                <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 20 }}>
+                  particularily enjoyable?
+              </Text>
+              </View>
+
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 20, textAlign: "center" }}>{userExperience.value}</Text>
+
+              <TextInput
+                style={styles.input}
+                onChangeText={(val) => setLikeText(val)}
+                value={text}
+                placeholder='i.e. Dealing with people, taking risks...'
+
+              />
+              <View style={styles.appButton}>
+                <TouchableOpacity onPress={() => navigation.navigate("InterestThree")} style={styles.appButtonContainer}>
+                  <Text style={styles.appButtonText}>Next</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </SafeAreaView>
       <StatusBar style="auto" />
     </>
   );
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     elevation: 10,
     shadowRadius: '2%',
-    shadowOffset : { width: '-1%', height: '15%'},
+    shadowOffset: { width: '-1%', height: '15%' },
   },
   appButtonText: {
     fontSize: 18,
@@ -130,10 +133,10 @@ const styles = StyleSheet.create({
   },
   logoIcon: {
     height: '20%',
-    flexDirection:'row',
+    flexDirection: 'row',
     paddingTop: '7%',
     paddingBottom: '10%',
-    paddingRight: '45%',  
+    paddingRight: '45%',
     paddingLeft: '15%',
     alignItems: 'center',
     marginBottom: '7%'
@@ -157,5 +160,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     paddingLeft: 20,
+    maxWidth: 270
   },
 });

@@ -2,7 +2,7 @@ import store from '../screens/store.js';
 import { StatusBar } from 'expo-status-bar';
 import React from "react";
 import { useCallback } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import colors from '../assets/colors/colors';
@@ -35,51 +35,53 @@ export default function ExperienceOne({ navigation }) {
   return (
     <>
       <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
+
         <View style={styles.logoIcon}>
           <Shapes width={100} height={'100%'} />
           <View style={styles.title}>
             <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, paddingBottom: 10 }}>
-              Create your 
+              Create your
             </Text>
             <Text style={{ fontFamily: 'Mont-Regular', color: colors.black, fontSize: 24, }}>
-            profile
+              profile
             </Text>
           </View>
         </View>
-        <View style={styles.contentContainer}>
-          <View style={styles.description}>
-            <View style={{paddingBottom: '15%'}}>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                Let us start by  
+          <View style={styles.contentContainer}>
+            <View style={styles.description}>
+              <View style={{ paddingBottom: '15%' }}>
+                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                  Let us start by
               </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                adding a new
+                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                  adding a new
               </Text>
-              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                experience.
+                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                  experience.
               </Text>
-            </View>
-            <View>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                This is an item on a traditional resume 
+              </View>
+              <View>
+                <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                  This is an item on a traditional resume
               </Text>
-              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15}}>
-                such as a profession, degree, club, etc.
+                <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15 }}>
+                  such as a profession, degree, club, etc.
               </Text>
-            </View>
-            <TextInput
-              style={styles.input}
-              onChangeText={(val) => setTextValue(val)}
-              value={text}
-              placeholder='i.e. Software Engineer, Bartender...'
-            />
-            <View style={styles.appButton}>
-              <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.appButtonContainer}>
-                <Text style={styles.appButtonText}>Next</Text>
-              </TouchableOpacity>
+              </View>
+              <TextInput
+                style={styles.input}
+                onChangeText={(val) => setTextValue(val)}
+                value={text}
+                placeholder='i.e. Software Engineer, Bartender...'
+
+              />
+              <View style={styles.appButton}>
+                <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.appButtonContainer}>
+                  <Text style={styles.appButtonText}>Next</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </View>
       </SafeAreaView>
       <StatusBar style="auto" />
     </>
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     elevation: 10,
     shadowRadius: '2%',
-    shadowOffset : { width: '-1%', height: '15%'},
+    shadowOffset: { width: '-1%', height: '15%' },
   },
   appButtonText: {
     fontSize: 18,
@@ -129,10 +131,10 @@ const styles = StyleSheet.create({
   },
   logoIcon: {
     height: '20%',
-    flexDirection:'row',
+    flexDirection: 'row',
     paddingTop: '7%',
     paddingBottom: '10%',
-    paddingRight: '45%',  
+    paddingRight: '45%',
     paddingLeft: '15%',
     alignItems: 'center',
     marginBottom: '7%'
@@ -153,9 +155,10 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-   borderWidth: 2,
-   borderRadius: 20,
-   padding: 10,
-   paddingLeft: 20,
+    borderWidth: 2,
+    borderRadius: 20,
+    padding: 10,
+    paddingLeft: 20,
+    maxWidth: 280
   },
 });
