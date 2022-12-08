@@ -15,8 +15,13 @@ import ProfileWelcomeScreen from './screens/ProfileWelcomeScreen.js';
 import HomeFeed from './screens/HomeFeed.js';
 import Messages from './screens/Messages.js'
 import BobSurfer from './screens/BobSurferProfile.js'
+import Elyse from './screens/ElyseProfile.js'
+import Romuald from './screens/RomualdProfile.js'
+import Ben from './screens/BenProfile.js'
+import Yousef from './screens/YousefProfile.js'
 import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, TouchableOpacity, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ChatScreen from './screens/chat.js'
 
 
 
@@ -117,8 +122,43 @@ export default function App() {
               }}
             />
             <Stack.Screen
+              name="ElyseProfile"
+              component={Elyse}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="RomualdProfile"
+              component={Romuald}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="BenProfile"
+              component={Ben}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="YousefProfile"
+              component={Yousef}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
               name="TabNavigator"
               component={TabNavigator}
+              options={{
+                headerShown: false,
+              }}
+            />
+             <Stack.Screen
+              name="Chat"
+              component={ChatScreen}
               options={{
                 headerShown: false,
               }}

@@ -3349,7 +3349,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                 </View>
 
             </SafeAreaView>
-            <StatusBar style="auto" />
+        
         </>
     );
 }
@@ -3389,6 +3389,7 @@ const styles = StyleSheet.create({
     buttonClose: {
         backgroundColor: "#434343",
     },
+    
     centeredView: {
         flex: 1,
         justifyContent: "center",

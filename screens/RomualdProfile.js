@@ -28,7 +28,7 @@ import Wizard from '../screens/Wizard.js';
 import Profile_Pic from '../assets/components/profile_pic.svg';
 import Crown from '../assets/components/crown.svg'
 
-export default function BobSurferProfile({navigation}) {
+export default function RomualdProfile({navigation}) {
     const [notifModalVisible, setNotifModalVisible] = React.useState(false);
 
     const [fontsLoaded] = useFonts({
@@ -59,7 +59,7 @@ export default function BobSurferProfile({navigation}) {
                         >
                         <Icon name="ios-arrow-back-circle-outline" size={20}></Icon>
                         </TouchableOpacity> */}
-                        <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 28, paddingRight: 5 }}>Bob</Text>
+                        <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 28, paddingRight: 5 }}>Romuald Thomas</Text>
                         <YellowDot width={20} height={20} />
                     </View>
                 </View>
@@ -95,49 +95,67 @@ export default function BobSurferProfile({navigation}) {
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingTop: '5%', width: '90%', paddingLeft: '8%' }}>
                     <Text style={{ textAlign: 'center' }}>
-                        Professional surfer, looking to explore the world by surfing it!
+                        Student interested in the intersection between CS and Econ.
                     </Text>
                 </View>
             </View>
             <View style={{}}>
-                <Draggable x={'11%'} y={'25%'}
+                <Draggable x={'50%'} y={'100%'}
                     disabled={true}
                 >
                     <View style={{
                         width: 150,
                         height: 150,
-                        backgroundColor: '#6283FA'
+                        backgroundColor: '#B479C9'
                     }} >
                         <Text style={{
                             fontWeight: '600',
                             fontSize: 20,
                             textAlign: "center",
-                            paddingTop: "40%",
+                            paddingTop: "30%",
                             justifyContent: 'center',
                             margin: 10,
-                        }}> Surfing </Text>
+                        }}> Software Engineer </Text>
                     </View>
                 </Draggable>
-                <Draggable x={'8%'} y={'180%'}
+                <Draggable x={'45%'} y={'265%'}
                     disabled={true}
                 >
                     <View style={{
-                        width: 150,
-                        height: 150,
-                        borderRadius: 150 / 2,
-                        backgroundColor: '#6283FA'
+                        width: 120,
+                        height: 120,
+                        borderRadius: 120 / 2,
+                        backgroundColor: '#3BA95B'
                     }} >
                         <Text style={{
                             fontWeight: '600',
-                            fontSize: 20,
+                            fontSize: 14,
                             textAlign: "center",
                             paddingTop: "40%",
                             justifyContent: 'center',
                             margin: 10,
-                        }}> Travel </Text>
+                        }}> Economics </Text>
                     </View>
                 </Draggable>
-                <Draggable x={'65%'} y={'25%'}
+                <Draggable x={'18%'} y={'280%'}
+                    disabled={true}
+                >
+                    <View style={{
+                        width: 55,
+                        height: 55,
+                        backgroundColor: '#FF9800'
+                    }} >
+                        <Text style={{
+                            fontWeight: '600',
+                            fontSize: 8,
+                            textAlign: "center",
+                            paddingTop: "20%",
+                            justifyContent: 'center',
+                            margin: 10,
+                        }}> Section Leader</Text>
+                    </View>
+                </Draggable>
+                <Draggable x={'15%'} y={'300%'}
                     disabled={true}
                 >
                     <View style={{
@@ -149,32 +167,14 @@ export default function BobSurferProfile({navigation}) {
                             fontWeight: '600',
                             fontSize: 10,
                             textAlign: "center",
-                            paddingTop: "40%",
+                            paddingTop: "20%",
                             justifyContent: 'center',
                             margin: 10,
-                        }}> Swim Instructor </Text>
-                    </View>
-                </Draggable>
-                <Draggable x={'65%'} y={'140%'}
-                    disabled={true}
-                >
-                    <View style={{
-                        width: 75,
-                        height: 75,
-                        backgroundColor: '#6283FA'
-                    }} >
-                        <Text style={{
-                            fontWeight: '600',
-                            fontSize: 10,
-                            textAlign: "center",
-                            paddingTop: "40%",
-                            justifyContent: 'center',
-                            margin: 10,
-                        }}> LifeGuard </Text>
+                        }}> Research Assistant </Text>
                     </View>
                 </Draggable >
 
-                <Draggable x={'45%'} y={'200%'}
+                <Draggable x={'40%'} y={'30%'}
                     disabled={true}
                 >
                     <View style={{
@@ -190,16 +190,16 @@ export default function BobSurferProfile({navigation}) {
                             paddingTop: "40%",
                             justifyContent: 'center',
                             margin: 10,
-                        }}> WindSurfing </Text>
+                        }}> Web Design </Text>
                     </View>
                 </Draggable>
-                <Draggable x={'60%'} y={'420%'}
+                <Draggable x={'70%'} y={'30%'}
                     disabled={true}
                 >
                     <View style={{
-                        width: 75,
-                        height: 75,
-                        borderRadius: 75 / 2,
+                        width: 100,
+                        height: 100,
+                        borderRadius: 100 / 2,
                         backgroundColor: '#B479C9'
                     }} >
                         <Text style={{
@@ -209,7 +209,7 @@ export default function BobSurferProfile({navigation}) {
                             paddingTop: "40%",
                             justifyContent: 'center',
                             margin: 10,
-                        }}> Luxury Hotels </Text>
+                        }}> HCI </Text>
                     </View>
                 </Draggable>
             </View>
