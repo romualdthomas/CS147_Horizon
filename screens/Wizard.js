@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { View, Text, Button, Pressable } from 'react-native';
+import { View, Text, Button, Pressable, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 class Step extends PureComponent {
@@ -9,7 +9,7 @@ class Step extends PureComponent {
             <View>
                 <Text>{this.props.children}</Text>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingTop: 10 }}>
-                    <Pressable
+                    <TouchableOpacity
                         onPress={this.props.prevStep}
                         style={({ pressed }) => [
                             {
@@ -20,9 +20,9 @@ class Step extends PureComponent {
                         disabled={this.props.currentIndex == 0}
                     >
                         <Icon name="ios-arrow-back-circle-outline" size={20}></Icon>
-                    </Pressable>
+                    </TouchableOpacity>
                     <Text style={{paddingLeft: 8, paddingRight: 8}}>{this.props.currentIndex + 1} of 5</Text>
-                    <Pressable
+                    <TouchableOpacity
                         onPress={this.props.nextStep}
                         style={({ pressed }) => [
                             {
@@ -33,7 +33,7 @@ class Step extends PureComponent {
                         disabled={this.props.isLast}
                     >
                         <Icon name="ios-arrow-forward-circle-outline" size={20}></Icon>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         )

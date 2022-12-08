@@ -10,6 +10,7 @@ import colors from '../assets/colors/colors';
 import store from './store';
 import YellowDot from '../assets/components/yellow_dot.svg';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { GiftedChat } from 'react-native-gifted-chat'
 // import Red from '../assets/components/red.svg';
 // import Yellow from '../assets/components/yellow.svg';
 // import Orange from '../assets/components/orange.svg';
@@ -60,7 +61,7 @@ export default function Messages({ navigation }) {
                     borderWidth: 3
                 }} >
                     <View style={{ paddingTop: '2%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
-                        <Pressable
+                        <TouchableOpacity
                             onPress={() => navigation.navigate("BobSurferProfile")}
                             style={({ pressed }) => [
                                 {
@@ -70,7 +71,7 @@ export default function Messages({ navigation }) {
                                 }]}
                         >
                             <Profile_Pic width={90} height={'90%'}></Profile_Pic>
-                        </Pressable>
+                        </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -106,8 +107,8 @@ export default function Messages({ navigation }) {
                                 </View>
                             </View>
                             <View style={{ paddingLeft: 10, }}>
-                                <Pressable
-                                    onPress={() => navigation.navigate("Chat")}
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate("ChatBob")}
                                     style={({ pressed }) => [
                                         {
                                             backgroundColor: pressed
@@ -116,7 +117,7 @@ export default function Messages({ navigation }) {
                                         }]}
                                 >
                                     <Icon name="ios-chatbox-outline" size={25}></Icon>
-                                </Pressable>
+                                </TouchableOpacity>
 
                             </View>
                         </View>
@@ -138,7 +139,7 @@ export default function Messages({ navigation }) {
                     borderWidth: 3
                 }} >
                     <View style={{ paddingTop: '2%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
-                        <Pressable
+                        <TouchableOpacity
                             onPress={() => navigation.navigate("ElyseProfile")}
                             style={({ pressed }) => [
                                 {
@@ -148,7 +149,7 @@ export default function Messages({ navigation }) {
                                 }]}
                         >
                             <Profile_Pic width={90} height={'90%'}></Profile_Pic>
-                        </Pressable>
+                        </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -184,8 +185,8 @@ export default function Messages({ navigation }) {
                                 </View>
                             </View>
                             <View style={{ paddingLeft: 10, }}>
-                                <Pressable
-                                    onPress={() => navigation.navigate("Chat")}
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate("ChatElyse")}
                                     style={({ pressed }) => [
                                         {
                                             backgroundColor: pressed
@@ -194,7 +195,7 @@ export default function Messages({ navigation }) {
                                         }]}
                                 >
                                     <Icon name="ios-chatbox-outline" size={25}></Icon>
-                                </Pressable>
+                                </TouchableOpacity>
 
                             </View>
                         </View>
@@ -216,7 +217,7 @@ export default function Messages({ navigation }) {
                     borderWidth: 3
                 }} >
                     <View style={{ paddingTop: '2%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
-                        <Pressable
+                        <TouchableOpacity
                             onPress={() => navigation.navigate("RomualdProfile")}
                             style={({ pressed }) => [
                                 {
@@ -226,7 +227,7 @@ export default function Messages({ navigation }) {
                                 }]}
                         >
                             <Profile_Pic width={90} height={'90%'}></Profile_Pic>
-                        </Pressable>
+                        </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
@@ -255,8 +256,8 @@ export default function Messages({ navigation }) {
                                 </View>
                             </View>
                             <View style={{ paddingLeft: 10, }}>
-                                <Pressable
-                                    onPress={() => navigation.navigate("Chat")}
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate("ChatRomuald")}
                                     style={({ pressed }) => [
                                         {
                                             backgroundColor: pressed
@@ -265,7 +266,7 @@ export default function Messages({ navigation }) {
                                         }]}
                                 >
                                     <Icon name="ios-chatbox-outline" size={25}></Icon>
-                                </Pressable>
+                                </TouchableOpacity>
 
                             </View>
                         </View>
@@ -287,7 +288,7 @@ export default function Messages({ navigation }) {
                     borderWidth: 3
                 }} >
                     <View style={{ paddingTop: '2%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
-                        <Pressable
+                        <TouchableOpacity
                             onPress={() => navigation.navigate("BenProfile")}
                             style={({ pressed }) => [
                                 {
@@ -297,7 +298,7 @@ export default function Messages({ navigation }) {
                                 }]}
                         >
                             <Profile_Pic width={90} height={'90%'}></Profile_Pic>
-                        </Pressable>
+                        </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -326,8 +327,8 @@ export default function Messages({ navigation }) {
                                 </View>
                             </View>
                             <View style={{ paddingLeft: 10, }}>
-                                <Pressable
-                                    onPress={() => navigation.navigate("Chat")}
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate("ChatBen")}
                                     style={({ pressed }) => [
                                         {
                                             backgroundColor: pressed
@@ -336,7 +337,7 @@ export default function Messages({ navigation }) {
                                         }]}
                                 >
                                     <Icon name="ios-chatbox-outline" size={25}></Icon>
-                                </Pressable>
+                                </TouchableOpacity>
 
                             </View>
                         </View>
@@ -358,7 +359,7 @@ export default function Messages({ navigation }) {
                     borderWidth: 3
                 }} >
                     <View style={{ paddingTop: '2%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
-                        <Pressable
+                        <TouchableOpacity
                             onPress={() => navigation.navigate("YousefProfile")}
                             style={({ pressed }) => [
                                 {
@@ -368,7 +369,7 @@ export default function Messages({ navigation }) {
                                 }]}
                         >
                             <Profile_Pic width={90} height={'90%'}></Profile_Pic>
-                        </Pressable>
+                        </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -397,8 +398,8 @@ export default function Messages({ navigation }) {
                                 </View>
                             </View>
                             <View style={{ paddingLeft: 10, }}>
-                                <Pressable
-                                    onPress={() => navigation.navigate("Chat")}
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate("ChatYousef")}
                                     style={({ pressed }) => [
                                         {
                                             backgroundColor: pressed
@@ -407,7 +408,7 @@ export default function Messages({ navigation }) {
                                         }]}
                                 >
                                     <Icon name="ios-chatbox-outline" size={25}></Icon>
-                                </Pressable>
+                                </TouchableOpacity>
 
                             </View>
                         </View>
@@ -428,7 +429,7 @@ export default function Messages({ navigation }) {
                         <YellowDot width={20} height={20} />
                     </View>
                     <View style={styles.screenLogo}>
-                        <Pressable
+                        <TouchableOpacity
                             onPress={() => setNotifModalVisible(true)}
                             style={({ pressed }) => [
                                 {
@@ -438,7 +439,7 @@ export default function Messages({ navigation }) {
                                 }]}
                         >
                             <Icon name="ios-notifications-sharp" size={28} ></Icon>
-                        </Pressable>
+                        </TouchableOpacity>
 
                     </View>
                 </View>
@@ -447,10 +448,28 @@ export default function Messages({ navigation }) {
             <ScrollView>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingTop: '5%' }}>
                     <View>
-                        <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>All Following</Text>
+                        <TouchableOpacity
+                            style={({ pressed }) => [
+                                {
+                                    backgroundColor: pressed
+                                        ? 'rgb(210, 230, 255)'
+                                        : '#fff',
+                                }]}
+                        >
+                            <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>All Following</Text>
+                        </TouchableOpacity>
                     </View>
                     <View>
-                        <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>Mentors</Text>
+                        <TouchableOpacity
+                            style={({ pressed }) => [
+                                {
+                                    backgroundColor: pressed
+                                        ? 'rgb(210, 230, 255)'
+                                        : '#fff',
+                                }]}
+                        >
+                            <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>Mentors</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
@@ -466,7 +485,7 @@ export default function Messages({ navigation }) {
                     <View style={styles.centeredView}>
                         <View style={styles.modalViewNotif}>
                             <View style={{ paddingLeft: '92%', paddingBottom: '5%' }}>
-                                <Pressable
+                                <TouchableOpacity
                                     onPress={() => setNotifModalVisible(!notifModalVisible)}
                                     style={({ pressed }) => [
                                         {
@@ -476,7 +495,7 @@ export default function Messages({ navigation }) {
                                         }]}
                                 >
                                     <Icon name="ios-close-circle-outline" size={20}></Icon>
-                                </Pressable>
+                                </TouchableOpacity>
 
                             </View>
                             <View style={{ paddingBottom: 10, flexDirection: 'column', }}>
@@ -492,8 +511,9 @@ export default function Messages({ navigation }) {
                                     borderWidth: 3
                                 }} >
                                     <View style={{ paddingTop: '4%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
-                                        <Pressable
-                                            onPress={() => setNotifModalVisible(!notifModalVisible)}
+                                        <TouchableOpacity
+                                            onPress={() => navigation.navigate("ChatBen")}
+                                            onPressOut={() => setNotifModalVisible(!notifModalVisible)}
                                             style={({ pressed }) => [
                                                 {
                                                     backgroundColor: pressed
@@ -502,7 +522,7 @@ export default function Messages({ navigation }) {
                                                 }]}
                                         >
                                             <Profile_Pic width={90} height={'90%'}></Profile_Pic>
-                                        </Pressable>
+                                        </TouchableOpacity>
 
                                         <Text style={{
                                             fontFamily: 'Mont-Regular',

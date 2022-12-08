@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import Tooltip from "react-native-walkthrough-tooltip";
 import React from "react";
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { Alert, StyleSheet, Text, View, SafeAreaView, Button, Modal, TextInput, navigation, TouchableOpacity, Platform, Pressable, KeyboardAvoidingView } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -10,7 +10,7 @@ import colors from '../assets/colors/colors';
 import store from './store';
 import YellowDot from '../assets/components/yellow_dot.svg';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { GiftedChat } from 'react-native-gifted-chat'
+import { Bubble, GiftedChat, Send } from 'react-native-gifted-chat'
 // import Red from '../assets/components/red.svg';
 // import Yellow from '../assets/components/yellow.svg';
 // import Orange from '../assets/components/orange.svg';
@@ -25,13 +25,34 @@ import Interests from '../assets/components/interests_title.svg';
 import Likes from '../assets/components/likes_title.svg';
 import Sizes from '../assets/components/size_title.svg';
 import Color from '../assets/components/color_title.svg';
-import Wizard from '../screens/Wizard.js';
+import Wizard from './Wizard.js';
 import Profile_Pic from '../assets/components/profile_pic.svg';
 import Crown from '../assets/components/crown.svg'
+import Ben from '../assets/profile-pics/ben.png'
 
 export default function Chat({ navigation }) {
     const [notifModalVisible, setNotifModalVisible] = React.useState(false);
     const [text, onChangeText] = React.useState(null);
+    const [messages, setMessages] = React.useState([]);
+
+    React.useEffect(() => {
+        setMessages([
+            {
+                _id: 1,
+                text: 'Hey!',
+                createdAt: new Date(),
+                user: {
+                    _id: 2,
+                    name: 'React Native',
+                    avatar: Ben,
+                },
+            },
+        ])
+    }, [])
+
+    const onSend = useCallback((messages = []) => {
+        setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+    }, [])
 
     const [fontsLoaded] = useFonts({
         'Mont-Bold': require('../assets/fonts/Mont-Trial-Bold.ttf'),
@@ -51,6 +72,35 @@ export default function Chat({ navigation }) {
         return null;
     }
 
+    const renderBubble = (props) => {
+        return (
+            <Bubble
+                {...props}
+                wrapperStyle={{
+                    right: {
+                        backgroundColor: '#EB7A4A'
+                    }
+                }}
+
+                textStyle={{
+                    right: {
+                        color: '#fff'
+                    }
+                }}
+            />
+        )
+    }
+
+    const renderSend = (props) => {
+        return (
+            <Send {...props}>
+                <View>
+                    <Icon name="ios-send-outline" style={{ marginBottom: 5, marginRight: 5, alignItems: 'center' }} size={30}></Icon>
+                </View>
+            </Send>
+        )
+    }
+
 
     return (
         <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
@@ -58,12 +108,12 @@ export default function Chat({ navigation }) {
             <View style={styles.topSection}>
                 <View style={styles.header}>
                     <View style={styles.screenLogo}>
-                        {/* <TouchableOpacity
-                        onPress={() => navigation.navigate("LikesTwo")}
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate("Messages")}
                         >
-                        <Icon name="ios-arrow-back-circle-outline" size={20}></Icon>
-                        </TouchableOpacity> */}
-                        <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 28, paddingRight: 5 }}>Elyse Cornwall</Text>
+                            <Icon name="arrow-back-outline" style={{ paddingRight: 5 }} size={28}></Icon>
+                        </TouchableOpacity>
+                        <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 28, paddingRight: 5 }}>Ben Liao</Text>
                         <YellowDot width={20} height={20} />
                     </View>
                 </View>
@@ -73,19 +123,31 @@ export default function Chat({ navigation }) {
 
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingTop: '5%', width: '90%', paddingLeft: '8%' }}>
                     <Text style={{ textAlign: 'center' }}>
-                        Teacher and student, passionate about diverse mentorship in STEM.
+                        Computer Scientist and Designer interested in large-scale ideas
                     </Text>
                 </View>
             </View>
 
-            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center', width: '90%' }}>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={(val) => setTextValue(val)}
-                        value={text}
-                        placeholder='Send Message'
+            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'flex-end' }}>
+                <GiftedChat
+                    messages={messages}
+                    onSend={messages => onSend(messages)}
+                    user={{
+                        _id: 1,
+                    }}
+                    renderBubble={renderBubble}
+                    alwaysShowSend
+                    renderSend={renderSend}
+                    scrollToBottom
+                    textInputStyle={{
+                        height: 80,
+                        borderWidth: 2,
+                        borderRadius: 20,
+                        padding: 10,
+                        paddingLeft: 20,
 
-                    />
+                    }}
+                />
             </View>
 
 

@@ -47,43 +47,42 @@ export default function ExperienceOne({ navigation }) {
             </Text>
           </View>
         </View>
-          <View style={styles.contentContainer}>
-            <View style={styles.description}>
-              <View style={{ paddingBottom: '15%' }}>
-                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                  Let us start by
+        <View style={styles.contentContainer}>
+          <View style={styles.description}>
+            <View style={{ paddingBottom: '15%' }}>
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                Let us start by
               </Text>
-                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                  adding a new
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                adding a new
               </Text>
-                <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                  experience.
+              <Text style={{ fontFamily: 'Mont-Bold', fontSize: 34, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                experience.
               </Text>
-              </View>
-              <View>
-                <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
-                  This is an item on a traditional resume
+            </View>
+            <View>
+              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 5 }}>
+                This is an item on a traditional resume
               </Text>
-                <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15 }}>
-                  such as a profession, degree, club, etc.
+              <Text style={{ fontFamily: 'Mont-Regular', fontSize: 14, color: colors.black, maxWidth: 300, paddingBottom: 15 }}>
+                such as a profession, degree, club, etc.
               </Text>
-              </View>
-              <TextInput
-                style={styles.input}
-                onChangeText={(val) => setTextValue(val)}
-                value={text}
-                placeholder='i.e. Software Engineer, Bartender...'
+            </View>
+            <TextInput
+              style={styles.input}
+              onChangeText={(val) => setTextValue(val)}
+              value={text}
+              placeholder='i.e. Software Engineer, Bartender...'
 
-              />
-              <View style={styles.appButton}>
-                <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.appButtonContainer}>
-                  <Text style={styles.appButtonText}>Next</Text>
-                </TouchableOpacity>
-              </View>
+            />
+            <View style={styles.appButton}>
+              <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.appButtonContainer}>
+                <Text style={styles.appButtonText}>Next</Text>
+              </TouchableOpacity>
             </View>
           </View>
+        </View>
       </SafeAreaView>
-      <StatusBar style="auto" />
     </>
   );
 }

@@ -54,11 +54,11 @@ export default function ElyseProfile({ navigation }) {
             <View style={styles.topSection}>
                 <View style={styles.header}>
                     <View style={styles.screenLogo}>
-                        {/* <TouchableOpacity
-                        onPress={() => navigation.navigate("LikesTwo")}
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate("Messages")}
                         >
-                        <Icon name="ios-arrow-back-circle-outline" size={20}></Icon>
-                        </TouchableOpacity> */}
+                            <Icon name="arrow-back-outline" style={{ paddingRight: 5 }} size={28}></Icon>
+                        </TouchableOpacity>
                         <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 28, paddingRight: 5 }}>Elyse Cornwall</Text>
                         <YellowDot width={20} height={20} />
                     </View>
@@ -68,29 +68,46 @@ export default function ElyseProfile({ navigation }) {
             <View style={{}}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingTop: '5%', alignItems: 'center' }}>
                     <View>
-                        <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>View Network</Text>
-                        <View style={{ alignSelf: 'center', height: 2, backgroundColor: 'black', width: '100%', }} />
+                        <TouchableOpacity
+                            style={({ pressed }) => [
+                                {
+                                    backgroundColor: pressed
+                                        ? 'rgb(210, 230, 255)'
+                                        : '#DDDDDD',
+                                }]}
+                        >
+                            <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>View Network</Text>
+                            <View style={{ alignSelf: 'center', height: 2, backgroundColor: 'black', width: '100%', }} />
+                        </TouchableOpacity>
                     </View>
                     <View>
-                        <View style={{
-                            width: 90,
-                            height: 40,
-                            borderRadius: '25%',
-                            backgroundColor: '#DDDDDD'
-                        }} >
-                            <Text style={{
-                                fontFamily: 'Mont-Bold',
-                                color: colors.black,
-                                fontSize: 15,
-                                textAlign: "center",
-                                paddingTop: '5%',
-                                justifyContent: 'center',
-                                margin: 10,
-                            }}>
-                                Follow
-                        </Text>
-                        </View>
-
+                        <TouchableOpacity
+                            style={({ pressed }) => [
+                                {
+                                    backgroundColor: pressed
+                                        ? 'rgb(210, 230, 255)'
+                                        : '#DDDDDD',
+                                }]}
+                        >
+                            <View style={{
+                                width: 90,
+                                height: 40,
+                                borderRadius: '25%',
+                                backgroundColor: '#DDDDDD'
+                            }} >
+                                <Text style={{
+                                    fontFamily: 'Mont-Bold',
+                                    color: colors.black,
+                                    fontSize: 15,
+                                    textAlign: "center",
+                                    paddingTop: '5%',
+                                    justifyContent: 'center',
+                                    margin: 10,
+                                }}>
+                                    Follow
+                            </Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingTop: '5%', width: '90%', paddingLeft: '8%' }}>
@@ -110,9 +127,9 @@ export default function ElyseProfile({ navigation }) {
                     }} >
                         <Text style={{
                             fontWeight: '600',
-                            fontSize: 14,
+                            fontSize: 15,
                             textAlign: "center",
-                            paddingTop: "40%",
+                            paddingTop: "35%",
                             justifyContent: 'center',
                             margin: 10,
                         }}> Section Leader </Text>
@@ -165,7 +182,7 @@ export default function ElyseProfile({ navigation }) {
                     }} >
                         <Text style={{
                             fontWeight: '600',
-                            fontSize: 10,
+                            fontSize: 14,
                             textAlign: "center",
                             paddingTop: "30%",
                             justifyContent: 'center',
@@ -184,7 +201,7 @@ export default function ElyseProfile({ navigation }) {
                     }} >
                         <Text style={{
                             fontWeight: '600',
-                            fontSize: 10,
+                            fontSize: 15,
                             textAlign: "center",
                             paddingTop: "40%",
                             justifyContent: 'center',
@@ -241,7 +258,7 @@ export default function ElyseProfile({ navigation }) {
                     }} >
                         <Text style={{
                             fontWeight: '600',
-                            fontSize: 10,
+                            fontSize: 15,
                             textAlign: "center",
                             paddingTop: "30%",
                             justifyContent: 'center',

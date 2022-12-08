@@ -21,8 +21,11 @@ import Ben from './screens/BenProfile.js'
 import Yousef from './screens/YousefProfile.js'
 import { StyleSheet, Text, View, SafeAreaView, Button, TextInput, navigation, TouchableOpacity, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import ChatScreen from './screens/chat.js'
-
+import ChatScreenElyse from './screens/ChatElyse.js';
+import ChatScreenRomuald from './screens/ChatRomuald.js';
+import ChatScreenYousef from './screens/ChatYousef.js'
+import ChatScreenBen from './screens/ChatBen.js'
+import ChatScreenBob from './screens/ChatBob.js'
 
 
 export default function App() {
@@ -157,8 +160,36 @@ export default function App() {
               }}
             />
              <Stack.Screen
-              name="Chat"
-              component={ChatScreen}
+              name="ChatElyse"
+              component={ChatScreenElyse}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="ChatBen"
+              component={ChatScreenBen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="ChatRomuald"
+              component={ChatScreenRomuald}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="ChatYousef"
+              component={ChatScreenYousef}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="ChatBob"
+              component={ChatScreenBob}
               options={{
                 headerShown: false,
               }}

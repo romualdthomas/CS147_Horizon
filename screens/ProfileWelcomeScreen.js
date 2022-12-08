@@ -2322,7 +2322,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                             <YellowDot width={20} height={20} />
                         </View>
                         <View style={styles.screenLogo}>
-                            <Pressable
+                            <TouchableOpacity
                                 onPress={() => setNotifModalVisible(true)}
                                 style={({ pressed }) => [
                                     {
@@ -2332,7 +2332,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                     }]}
                             >
                                 <Icon name="ios-notifications-sharp" size={28} ></Icon>
-                            </Pressable>
+                            </TouchableOpacity>
 
                         </View>
                     </View>
@@ -2389,8 +2389,9 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                         borderWidth: 3
                                     }} >
                                         <View style={{ paddingTop: '4%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
-                                            <Pressable
-                                                onPress={() => setNotifModalVisible(!notifModalVisible)}
+                                            <TouchableOpacity
+                                                onPress={() => navigation.navigate("ChatBen")}
+                                                onPressOut={()=> setNotifModalVisible(!notifModalVisible)}
                                                 style={({ pressed }) => [
                                                     {
                                                         backgroundColor: pressed
@@ -2399,7 +2400,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                                     }]}
                                             >
                                                 <Profile_Pic width={90} height={'90%'}></Profile_Pic>
-                                            </Pressable>
+                                            </TouchableOpacity>
 
                                             <Text style={{
                                                 fontFamily: 'Mont-Regular',
