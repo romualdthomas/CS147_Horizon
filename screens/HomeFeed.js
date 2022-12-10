@@ -200,7 +200,7 @@ export default function HomeFeed({ navigation }) {
                     {isEnabledUpdates
                         ? 
 
-                            <UpdatePostElyse />
+                            <UpdatePostElyse navigation={navigation}/>
                             
 
            
@@ -208,14 +208,14 @@ export default function HomeFeed({ navigation }) {
                         </View>
                     }
 
-                    {isEnabledUpdates
+                    {/* {isEnabledUpdates
                         ? 
                             <UpdatePostYousef />
 
                         
                         : <View>
                         </View>
-                    }
+                    } */}
 
                 </ScrollView>
             </View>

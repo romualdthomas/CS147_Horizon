@@ -109,7 +109,7 @@ export default function Chat({ navigation }) {
                 <View style={styles.header}>
                     <View style={styles.screenLogo}>
                         <TouchableOpacity
-                        onPress={() => navigation.navigate("Messages")}
+                        onPress={() => navigation.goBack()}
                         >
                         <Icon name="arrow-back-outline" style={{paddingRight: 5}} size={28}></Icon>
                         </TouchableOpacity>
