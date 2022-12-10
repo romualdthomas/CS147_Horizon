@@ -1,19 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import Tooltip from "react-native-walkthrough-tooltip";
 import React from "react";
 import { useCallback, useState, useEffect } from 'react';
-import { Alert, StyleSheet, Text, View, SafeAreaView, Button, Modal, TextInput, navigation, TouchableOpacity, Platform, Pressable } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, Modal, TextInput, navigation, TouchableOpacity, Platform, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Experiences from '../assets/components/experience_title.svg';
 
 
-
-
 SplashScreen.preventAutoHideAsync();
-
-
 
 
 export default function Experiences() {

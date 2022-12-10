@@ -26,6 +26,7 @@ import Sizes from '../assets/components/size_title.svg';
 import Color from '../assets/components/color_title.svg';
 import Wizard from '../screens/Wizard.js';
 import Profile_Pic from '../assets/components/profile_pic.svg';
+import BenRound from '../assets/profile-pics/ben_round.svg'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -1679,7 +1680,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
         if (activeInterestNum >= 10) {
             Alert.alert("Maximum number of Interest Nodes have been reached");
         } else {
-            if (countInterestValue <= 0 || countInterestLike <= 0 || countInterestColor <= 0 || countInterestSize <= 0) {
+            if (countInterestValue <= 0 || countInterestColor <= 0 || countInterestSize <= 0) {
                 Alert.alert("Please fillout all fields or click 'Cancel'.");
             } else {
                 countInterestValue = 0;
@@ -1738,7 +1739,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
         if (activeInterestNum == 10) {
             Alert.alert("Maximum number of Experience Nodes have been reached");
         } else {
-            if (countExperienceValue <= 0 || countExperienceLike <= 0 || countExperienceColor <= 0 || countExperienceSize <= 0) {
+            if (countExperienceValue <= 0 || countExperienceColor <= 0 || countExperienceSize <= 0) {
                 Alert.alert("Please fillout all fields or click 'Cancel'.");
             } else {
                 if (activeExperienceNum == 0) {
@@ -1824,7 +1825,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode1 = () => {
         return (
             <Draggable x={200} y={300}
-                onLongPress={() => getNodeData(1)}
+                onShortPressRelease={() => getNodeData(1)}
             >
                 <View style={{
                     width: initialExperienceWidth,
@@ -1848,7 +1849,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode1 = () => {
         return (
             <Draggable x={60} y={50}
-                onLongPress={() => getNodeData(11)}
+                onShortPressRelease={() => getNodeData(11)}
             >
                 <View style={{
                     width: initialInterestWidth,
@@ -1873,7 +1874,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode2 = () => {
         return (
             <Draggable x={150} y={100}
-                onLongPress={() => getNodeData(2)}
+                onShortPressRelease={() => getNodeData(2)}
             >
                 <View style={{
                     width: experienceWidth2,
@@ -1896,7 +1897,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode2 = () => {
         return (
             <Draggable x={70} y={300}
-                onLongPress={() => getNodeData(12)}
+                onShortPressRelease={() => getNodeData(12)}
             >
                 <View style={{
                     width: interestWidth2,
@@ -1920,7 +1921,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode3 = () => {
         return (
             <Draggable x={130} y={130}
-                onLongPress={() => getNodeData(3)}
+                onShortPressRelease={() => getNodeData(3)}
             >
                 <View style={{
                     width: experienceWidth3,
@@ -1943,7 +1944,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode3 = () => {
         return (
             <Draggable x={90} y={280}
-                onLongPress={() => getNodeData(13)}
+                onShortPressRelease={() => getNodeData(13)}
             >
                 <View style={{
                     width: interestWidth3,
@@ -1967,7 +1968,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode4 = () => {
         return (
             <Draggable x={140} y={150}
-                onLongPress={() => getNodeData(4)}
+                onShortPressRelease={() => getNodeData(4)}
             >
                 <View style={{
                     width: experienceWidth4,
@@ -1990,7 +1991,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode4 = () => {
         return (
             <Draggable x={70} y={260}
-                onLongPress={() => getNodeData(14)}
+                onShortPressRelease={() => getNodeData(14)}
             >
                 <View style={{
                     width: interestWidth4,
@@ -2014,7 +2015,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode5 = () => {
         return (
             <Draggable x={170} y={200}
-                onLongPress={() => getNodeData(5)}
+                onShortPressRelease={() => getNodeData(5)}
             >
                 <View style={{
                     width: experienceWidth5,
@@ -2037,7 +2038,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode5 = () => {
         return (
             <Draggable x={140} y={200}
-                onLongPress={() => getNodeData(15)}
+                onShortPressRelease={() => getNodeData(15)}
             >
                 <View style={{
                     width: interestWidth5,
@@ -2061,7 +2062,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode6 = () => {
         return (
             <Draggable x={130} y={110}
-                onLongPress={() => getNodeData(6)}
+                onShortPressRelease={() => getNodeData(6)}
             >
                 <View style={{
                     width: experienceWidth6,
@@ -2084,7 +2085,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode6 = () => {
         return (
             <Draggable x={110} y={200}
-                onLongPress={() => getNodeData(16)}
+                onShortPressRelease={() => getNodeData(16)}
             >
                 <View style={{
                     width: interestWidth6,
@@ -2108,7 +2109,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode7 = () => {
         return (
             <Draggable x={130} y={100}
-                onLongPress={() => getNodeData(7)}
+                onShortPressRelease={() => getNodeData(7)}
             >
                 <View style={{
                     width: experienceWidth7,
@@ -2131,7 +2132,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode7 = () => {
         return (
             <Draggable x={160} y={220}
-                onLongPress={() => getNodeData(17)}
+                onShortPressRelease={() => getNodeData(17)}
             >
                 <View style={{
                     width: interestWidth7,
@@ -2155,7 +2156,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode8 = () => {
         return (
             <Draggable x={170} y={140}
-                onLongPress={() => getNodeData(8)}
+                onShortPressRelease={() => getNodeData(8)}
             >
                 <View style={{
                     width: experienceWidth8,
@@ -2178,7 +2179,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode8 = () => {
         return (
             <Draggable x={150} y={280}
-                onLongPress={() => getNodeData(18)}
+                onShortPressRelease={() => getNodeData(18)}
             >
                 <View style={{
                     width: interestWidth8,
@@ -2202,7 +2203,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode9 = () => {
         return (
             <Draggable x={130} y={190}
-                onLongPress={() => getNodeData(9)}
+                onShortPressRelease={() => getNodeData(9)}
             >
                 <View style={{
                     width: experienceWidth9,
@@ -2225,7 +2226,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode9 = () => {
         return (
             <Draggable x={120} y={250}
-                onLongPress={() => getNodeData(19)}
+                onShortPressRelease={() => getNodeData(19)}
             >
                 <View style={{
                     width: interestWidth9,
@@ -2249,7 +2250,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const experienceNode10 = () => {
         return (
             <Draggable x={170} y={110}
-                onLongPress={() => getNodeData(10)}
+                onShortPressRelease={() => getNodeData(10)}
             >
                 <View style={{
                     width: experienceWidth10,
@@ -2272,7 +2273,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
     const interestNode10 = () => {
         return (
             <Draggable x={170} y={280}
-                onLongPress={() => getNodeData(20)}
+                onShortPressRelease={() => getNodeData(20)}
             >
                 <View style={{
                     width: interestWidth10,
@@ -2363,7 +2364,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                         <View style={styles.centeredView}>
                             <View style={styles.modalViewNotif}>
                                 <View style={{ paddingLeft: '92%', paddingBottom: '5%' }}>
-                                    <Pressable
+                                    <TouchableOpacity
                                         onPress={() => setNotifModalVisible(!notifModalVisible)}
                                         style={({ pressed }) => [
                                             {
@@ -2373,7 +2374,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                             }]}
                                     >
                                         <Icon name="ios-close-circle-outline" size={20}></Icon>
-                                    </Pressable>
+                                    </TouchableOpacity>
 
                                 </View>
                                 <View style={{ paddingBottom: 10, flexDirection: 'column', }}>
@@ -2390,8 +2391,8 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                     }} >
                                         <View style={{ paddingTop: '4%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
                                             <TouchableOpacity
-                                                onPress={() => navigation.navigate("ChatBen")}
-                                                onPressOut={()=> setNotifModalVisible(!notifModalVisible)}
+                                                onPress={() => navigation.navigate("BenProfile")}
+                                                onPressOut={() => setNotifModalVisible(!notifModalVisible)}
                                                 style={({ pressed }) => [
                                                     {
                                                         backgroundColor: pressed
@@ -2399,7 +2400,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                                             : '#DDDDDD',
                                                     }]}
                                             >
-                                                <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                                                <BenRound width={90} height={'90%'} ></BenRound>
                                             </TouchableOpacity>
 
                                             <Text style={{
@@ -2433,7 +2434,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                         <View style={styles.centeredView}>
                             <View style={styles.modalViewHelp}>
                                 <View style={{ paddingLeft: '93%' }}>
-                                    <Pressable
+                                    <TouchableOpacity
                                         onPress={() => setHelpModalVisible(!helpModalVisible)}
                                         style={({ pressed }) => [
                                             {
@@ -2443,7 +2444,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                             }]}
                                     >
                                         <Icon name="ios-close-circle-outline" size={20}></Icon>
-                                    </Pressable>
+                                    </TouchableOpacity>
 
                                 </View>
                                 <View style={{ paddingBottom: 10, flexDirection: 'column', }}>
@@ -2455,10 +2456,10 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                         <Wizard.Step>
                                             <View style={{}} >
                                                 <View style={{}}>
-                                                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                                                    <View style={{ flexDirection: 'row', justifyContent: 'center', paddingTop: 15 }}>
                                                         <Experiences width={120} height={25} />
                                                     </View>
-                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 13, paddingTop: 10, maxWidth: 700 }}>
+                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 13, paddingTop: 10, lineHeight: 20, height: 115 }}>
                                                         Experiences are what you might see on a traditional resume. For example, a profession, degree, or club... something you’ve done!
                                                         On your profile, they’re represented as squares.
                                                     </Text>
@@ -2468,10 +2469,10 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                         <Wizard.Step>
                                             <View style={{}} >
                                                 <View style={{}}>
-                                                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                                                    <View style={{ flexDirection: 'row', justifyContent: 'center', paddingTop: 15 }}>
                                                         <Interests width={120} height={25} />
                                                     </View>
-                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 13, paddingTop: 10, }}>
+                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 13, paddingTop: 10, lineHeight: 20, height: 115 }}>
                                                         Interests are aspirations, topics, or hobbies.
                                                         They may be related to your experiences, or not! On your profile, they’re represented as circles.
                                                     </Text>
@@ -2481,10 +2482,10 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                         <Wizard.Step>
                                             <View style={{}} >
                                                 <View style={{}}>
-                                                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                                                    <View style={{ flexDirection: 'row', justifyContent: 'center', paddingTop: 15 }}>
                                                         <Likes width={120} height={25} />
                                                     </View>
-                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, paddingTop: 10, }}>
+                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, paddingTop: 10, lineHeight: 20, height: 115 }}>
                                                         Likes are tags that you can apply to an experience or interest to indicate what you like about it.
                                                         Likes help us recommend new people or interests to you.
                                                     </Text>
@@ -2494,10 +2495,10 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                         <Wizard.Step>
                                             <View style={{}}>
                                                 <View style={{}}>
-                                                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                                                    <View style={{ flexDirection: 'row', justifyContent: 'center', paddingTop: 15 }}>
                                                         <Sizes width={120} height={25} />
                                                     </View>
-                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, paddingTop: 10, }}>
+                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, paddingTop: 10, lineHeight: 20, height: 115 }}>
                                                         The size of an item can indicate its importance to you, since larger nodes will be easier for other users to see on your profile.
                                                         Notice that larger nodes will also appear brighter in color.
                                                     </Text>
@@ -2507,10 +2508,10 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                         <Wizard.Step>
                                             <View style={{}} >
                                                 <View style={{}}>
-                                                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                                                    <View style={{ flexDirection: 'row', justifyContent: 'center', paddingTop: 15 }}>
                                                         <Color width={120} height={25} />
                                                     </View>
-                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, paddingTop: 10, }}>
+                                                    <Text style={{ fontFamily: 'Mont-Regular', fontSize: 12, paddingTop: 10, lineHeight: 20, height: 115 }}>
                                                         You can use color to group the items on your profile.
                                                         For example, you might make all of the interests and experiences related to “real estate” blue, to show they’re conceptually related to you.
                                                     </Text>
@@ -2585,7 +2586,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                             )}
                                         </Pressable>
                                     </View>
-                                    <View>
+                                    <View >
                                         <Text style={{ color: colors.white }}>This</Text>
                                     </View>
                                     <View>
@@ -2715,7 +2716,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                     </View>
                                 </View>
                                 <View style={{ paddingBottom: 10, paddingTop: 10 }}>
-                                    <Text style={{ fontFamily: 'Mont-Bold', fontSize: 18, textAlign: 'center', paddingBottom: 4 }}>Size</Text>
+                                    <Text style={{ fontFamily: 'Mont-Bold', fontSize: 18, textAlign: 'center', paddingBottom: 4 }}>Importance</Text>
                                     <View style={{ flexDirection: 'row' }}>
                                         <Pressable
                                             onPress={() => setNodeSize('low')}
@@ -2793,21 +2794,20 @@ export default function ProfileWelcomeScreen({ navigation }) {
                     >
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
-                                <Text style={styles.modalText}>New Interest</Text>
+                                <TextInput
+                                    style={styles.inputNode}
+                                    onChangeText={(val) => setInterestValue(val)}
+                                    value={text2}
+                                    placeholder='Add another interest'
+                                    multiline={true}
+                                    blurOnSubmit={true}
+
+
+                                />
+                                {/* <Text style={styles.modalText}>{nodeValue}</Text> */}
                                 <View style={{ paddingBottom: 5 }}>
                                     <TextInput
-                                        style={styles.input}
-                                        onChangeText={(val) => setInterestValue(val)}
-                                        value={text2}
-                                        placeholder='Add another interest'
-                                        multiline={true}
-                                        blurOnSubmit={true}
-
-                                    />
-                                </View>
-                                <View style={{ paddingBottom: 8 }}>
-                                    <TextInput
-                                        style={styles.input}
+                                        style={styles.modalNodeText}
                                         onChangeText={(valText) => setInterestLike(valText)}
                                         value={text2}
                                         placeholder='What do you like about it?'
@@ -2816,6 +2816,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
 
                                     />
                                 </View>
+
                                 <View style={{ paddingBottom: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
                                     <View>
                                         <Pressable
@@ -2971,7 +2972,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                     </View>
                                 </View>
                                 <View style={{ paddingBottom: 10, paddingTop: 10 }}>
-                                    <Text style={{ fontFamily: 'Mont-Bold', fontSize: 18, textAlign: 'center', paddingBottom: 4 }}>Size</Text>
+                                    <Text style={{ fontFamily: 'Mont-Bold', fontSize: 18, textAlign: 'center', paddingBottom: 4 }}>Importance</Text>
                                     <View style={{ flexDirection: 'row' }}>
                                         <Pressable
                                             onPress={() => setInterestNodeSize('low')}
@@ -3049,21 +3050,20 @@ export default function ProfileWelcomeScreen({ navigation }) {
                     >
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
-                                <Text style={styles.modalText}>New Experience</Text>
+                                <TextInput
+                                    style={styles.inputNode}
+                                    onChangeText={(val) => setExperienceValue(val)}
+                                    value={text3}
+                                    placeholder='Add another experience'
+                                    multiline={true}
+                                    blurOnSubmit={true}
+
+
+                                />
+                                {/* <Text style={styles.modalText}>{nodeValue}</Text> */}
                                 <View style={{ paddingBottom: 5 }}>
                                     <TextInput
-                                        style={styles.input}
-                                        onChangeText={(val) => setExperienceValue(val)}
-                                        value={text3}
-                                        placeholder='Add another experience'
-                                        multiline={true}
-                                        blurOnSubmit={true}
-
-                                    />
-                                </View>
-                                <View style={{ paddingBottom: 8 }}>
-                                    <TextInput
-                                        style={styles.input}
+                                        style={styles.modalNodeText}
                                         onChangeText={(valText) => setExperienceLike(valText)}
                                         value={text3}
                                         placeholder='What do you like about it?'
@@ -3072,6 +3072,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
 
                                     />
                                 </View>
+
                                 <View style={{ paddingBottom: 10, flexDirection: 'row', justifyContent: 'space-around' }}>
                                     <View>
                                         <Pressable
@@ -3223,7 +3224,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                                     </Pressable>
                                 </View>
                                 <View style={{ paddingBottom: 10, paddingTop: 10 }}>
-                                    <Text style={{ fontFamily: 'Mont-Bold', fontSize: 18, textAlign: 'center', paddingBottom: 4 }}>Size</Text>
+                                    <Text style={{ fontFamily: 'Mont-Bold', fontSize: 18, textAlign: 'center', paddingBottom: 4 }}>Importance</Text>
                                     <View style={{ flexDirection: 'row' }}>
                                         <Pressable
                                             onPress={() => setExperienceNodeSize('low')}
@@ -3350,7 +3351,7 @@ export default function ProfileWelcomeScreen({ navigation }) {
                 </View>
 
             </SafeAreaView>
-        
+
         </>
     );
 }
@@ -3383,14 +3384,14 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         textAlign: "center",
         fontFamily: 'Mont-Regular',
-        fontSize: 10,
+        fontSize: 15,
         paddingBottom: 10
     },
 
     buttonClose: {
         backgroundColor: "#434343",
     },
-    
+
     centeredView: {
         flex: 1,
         justifyContent: "center",
@@ -3443,7 +3444,7 @@ const styles = StyleSheet.create({
 
 
     modalViewHelp: {
-        //height: 400,
+        height: 330,
         width: 350,
         margin: 40,
         marginHorizontal: 50,

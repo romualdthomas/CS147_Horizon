@@ -27,10 +27,25 @@ import Sizes from '../assets/components/size_title.svg';
 import Color from '../assets/components/color_title.svg';
 import Wizard from '../screens/Wizard.js';
 import Profile_Pic from '../assets/components/profile_pic.svg';
-import Crown from '../assets/components/crown.svg'
+import Crown from '../assets/components/crown.svg';
+import BenRound from '../assets/profile-pics/ben_round.svg';
+import RomualdRound from '../assets/profile-pics/romuald_round.svg';
+import BobRound from '../assets/profile-pics/bob_round.svg';
+import ElyseRound from '../assets/profile-pics/elyse_round.svg';
+import YousefRound from '../assets/profile-pics/yousef_round.svg';
+
+var bobShow = true;
+var elyseShow = true;
+var romualdShow = true;
+var benShow = true;
+var yousefShow = true;
 
 export default function Messages({ navigation }) {
     const [notifModalVisible, setNotifModalVisible] = React.useState(false);
+
+    const [allColor, setAllColor] = React.useState('#000');
+    const [mentorColor, setMentorColor] = React.useState('#DDDDDD');
+
 
     const [fontsLoaded] = useFonts({
         'Mont-Bold': require('../assets/fonts/Mont-Trial-Bold.ttf'),
@@ -48,6 +63,26 @@ export default function Messages({ navigation }) {
 
     if (!fontsLoaded) {
         return null;
+    }
+
+    const showAll = () => {
+        setAllColor('#000');
+        setMentorColor('#DDDDDD')
+        bobShow = true;
+        elyseShow = true;
+        romualdShow = true;
+        benShow = true;
+        yousefShow = true;
+    }
+
+    const showMentors = () => {
+        setAllColor('#DDDDDD');
+        setMentorColor('#000')
+        bobShow = true;
+        elyseShow = true;
+        romualdShow = false;
+        benShow = false;
+        yousefShow = false;
     }
 
     const bobMessage = () => {
@@ -70,7 +105,7 @@ export default function Messages({ navigation }) {
                                         : '#DDDDDD',
                                 }]}
                         >
-                            <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                            <BobRound width={90} height={'90%'}></BobRound>
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
@@ -148,7 +183,7 @@ export default function Messages({ navigation }) {
                                         : '#DDDDDD',
                                 }]}
                         >
-                            <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                            <ElyseRound width={90} height={'90%'}></ElyseRound>
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
@@ -226,7 +261,7 @@ export default function Messages({ navigation }) {
                                         : '#DDDDDD',
                                 }]}
                         >
-                            <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                            <RomualdRound width={90} height={'90%'}></RomualdRound>
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
@@ -297,7 +332,7 @@ export default function Messages({ navigation }) {
                                         : '#DDDDDD',
                                 }]}
                         >
-                            <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                            <BenRound width={90} height={'90%'}></BenRound>
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
@@ -368,7 +403,7 @@ export default function Messages({ navigation }) {
                                         : '#DDDDDD',
                                 }]}
                         >
-                            <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                            <YousefRound width={90} height={'90%'}></YousefRound>
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'column' }}>
@@ -449,6 +484,7 @@ export default function Messages({ navigation }) {
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingTop: '5%' }}>
                     <View>
                         <TouchableOpacity
+                            onPress={() => showAll()}
                             style={({ pressed }) => [
                                 {
                                     backgroundColor: pressed
@@ -456,11 +492,12 @@ export default function Messages({ navigation }) {
                                         : '#fff',
                                 }]}
                         >
-                            <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>All Following</Text>
+                            <Text style={{ fontFamily: 'Mont-Bold', color: allColor, fontSize: 20 }}>All Following</Text>
                         </TouchableOpacity>
                     </View>
                     <View>
                         <TouchableOpacity
+                            onPress={() => showMentors()}
                             style={({ pressed }) => [
                                 {
                                     backgroundColor: pressed
@@ -468,7 +505,7 @@ export default function Messages({ navigation }) {
                                         : '#fff',
                                 }]}
                         >
-                            <Text style={{ fontFamily: 'Mont-Bold', color: colors.black, fontSize: 20 }}>Mentors</Text>
+                            <Text style={{ fontFamily: 'Mont-Bold', color: mentorColor, fontSize: 20 }}>Mentors</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -512,7 +549,7 @@ export default function Messages({ navigation }) {
                                 }} >
                                     <View style={{ paddingTop: '4%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
                                         <TouchableOpacity
-                                            onPress={() => navigation.navigate("ChatBen")}
+                                            onPress={() => navigation.navigate("BenProfile")}
                                             onPressOut={() => setNotifModalVisible(!notifModalVisible)}
                                             style={({ pressed }) => [
                                                 {
@@ -521,7 +558,7 @@ export default function Messages({ navigation }) {
                                                         : '#DDDDDD',
                                                 }]}
                                         >
-                                            <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                                            <BenRound width={90} height={'90%'}></BenRound>
                                         </TouchableOpacity>
 
                                         <Text style={{
@@ -540,11 +577,11 @@ export default function Messages({ navigation }) {
                         </View>
                     </View>
                 </Modal>
-                {bobMessage()}
-                {elyseMessage()}
-                {romualdMessage()}
-                {benMessage()}
-                {yousefMessage()}
+                {bobShow && bobMessage()}
+                {elyseShow && elyseMessage()}
+                {romualdShow && romualdMessage()}
+                {benShow && benMessage()}
+                {yousefShow && yousefMessage()}
             </ScrollView>
         </SafeAreaView>
 

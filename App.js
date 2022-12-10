@@ -39,11 +39,11 @@ export default function App() {
         initialRouteName={"Profile"}
         style={styles.tabBar}
         screenOptions={{
-          tabBarStyle: { backgroundColor: colors.white, borderRadius: '20%' },
+          tabBarStyle: { backgroundColor: colors.white, borderRadius: '25%' },
         }}
         tabBarOptions={{
-          activeTintColor: '#D3D3D3',
-          inactiveTintColor: colors.black,
+          activeTintColor: colors.black,
+          inactiveTintColor: '#D3D3D3',
           showLabel: false,
         }}
       >
