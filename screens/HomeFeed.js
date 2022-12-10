@@ -17,11 +17,11 @@ import Blue from '../assets/components/blue.svg';
 import Green from '../assets/components/green.svg';
 import Purple from '../assets/components/purple.svg';
 import { AntDesign } from '@expo/vector-icons';
-import RecIntPostPiano from '../posts/recIntPostPiano';
+import RecIntPostEducation from '../posts/recIntPostEducation';
 import RecIntPostTravel from '../posts/recIntPostTravel';
 import RecConPostAlex from '../posts/recConPostAlex';
-import RecConPostYousef from '../posts/recConPostYousef';
-import UpdatePostAlex from '../posts/updatePostAlex';
+import RecConPostElyse from '../posts/recConPostElyse';
+import UpdatePostElyse from '../posts/updatePostElyse';
 import UpdatePostYousef from '../posts/updatePostYousef';
 
 store.setState('bobmessage', true);
@@ -167,34 +167,52 @@ export default function HomeFeed({ navigation }) {
             <View style={{ height: '83%' }}>
                 <ScrollView>
                     {isEnabledConnections
-                        ? <View>
+                        ? 
 
-                            <RecConPostAlex />
-                            <RecConPostYousef />
-
+                            <RecConPostAlex navigation={navigation} />
+                            
+                        : <View>
                         </View>
+                    }
+                    {isEnabledConnections
+                        ? <RecConPostElyse navigation={navigation} />
                         : <View>
                         </View>
                     }
 
                     {isEnabledInterests
-                        ? <View>
+                        ? 
 
-                            <RecIntPostPiano />
+                            <RecIntPostEducation />
+                            
+                        : <View>
+                        </View>
+                    }
+
+                    {isEnabledInterests
+                        ? 
                             <RecIntPostTravel />
 
+                        : <View>
                         </View>
+                    }   
+
+                    {isEnabledUpdates
+                        ? 
+
+                            <UpdatePostElyse />
+                            
+
+           
                         : <View>
                         </View>
                     }
 
                     {isEnabledUpdates
-                        ? <View>
-
-                            <UpdatePostAlex />
+                        ? 
                             <UpdatePostYousef />
 
-                        </View>
+                        
                         : <View>
                         </View>
                     }
@@ -212,6 +230,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
+        height:"100%"
+
     },
     button: {
         borderRadius: 20,
