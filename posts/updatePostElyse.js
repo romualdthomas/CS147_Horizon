@@ -7,6 +7,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons'; 
 import YellowDot from '../assets/components/yellow_dot.svg';
+import Profile_Pic from '../assets/components/profile_pic.svg';
+import Crown from '../assets/components/crown.svg'
+
+
 
 
 
@@ -14,7 +18,7 @@ import YellowDot from '../assets/components/yellow_dot.svg';
 SplashScreen.preventAutoHideAsync();
 
 
-const UpdatePostElyse = () => {
+const UpdatePostElyse = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
     const [fontsLoaded] = useFonts({
@@ -58,7 +62,82 @@ const UpdatePostElyse = () => {
 
 
     
+const elyseMessage = () => {
+  return (
+      <View style={{ paddingTop: '3%', flexDirection: 'row', justifyContent: 'center' }}>
+          <View style={{
+              width: 330,
+              height: 100,
+              borderRadius: '25%',
+              backgroundColor: '#DDDDDD',
+              borderWidth: 3
+          }} >
+              <View style={{ paddingTop: '2%', paddingLeft: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', maxWidth: 220 }}>
+                  <TouchableOpacity
+                      onPress={() => navigation.navigate("ElyseProfile")}
+                      style={({ pressed }) => [
+                          {
+                              backgroundColor: pressed
+                                  ? 'rgb(210, 230, 255)'
+                                  : '#DDDDDD',
+                          }]}
+                  >
+                      <Profile_Pic width={90} height={'90%'}></Profile_Pic>
+                  </TouchableOpacity>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                      <View style={{ flexDirection: 'column' }}>
+                          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                              <View>
+                                  <Text style={{
+                                      fontWeight: '900',
+                                      fontSize: 12,
 
+
+                                      justifyContent: 'center',
+                                  }}>
+                                      Elyse Cornwall
+                                  </Text>
+                              </View>
+                              <View>
+
+
+
+                              </View>
+
+                          </View>
+                          <View>
+                              <Text style={{
+
+                                  fontSize: 12,
+
+
+                                  justifyContent: 'center',
+                              }}>
+                                  Teacher and student, passionate about diverse mentorship in STEM.
+                              </Text>
+                          </View>
+                      </View>
+                      <View style={{ paddingLeft: 10, }}>
+                          <TouchableOpacity
+                              onPress={() => navigation.navigate("ChatElyse")}
+                              style={({ pressed }) => [
+                                  {
+                                      backgroundColor: pressed
+                                          ? 'rgb(210, 230, 255)'
+                                          : '#DDDDDD',
+                                  }]}
+                          >
+                              <Icon name="ios-chatbox-outline" size={25}></Icon>
+                          </TouchableOpacity>
+
+                      </View>
+                  </View>
+
+              </View>
+          </View>
+      </View>
+  )
+}
 
 
 
@@ -75,90 +154,84 @@ const UpdatePostElyse = () => {
 
     
   <View style={styles.container}>
-    <View style={{flexDirection: 'row', alignItems:'center', height: '7%', marginBottom: 8}}>
+    <View style={{flexDirection: 'row', alignItems:'center', height: '6%', marginBottom: 8}}>
       <View style={{alignSelf: 'center', paddingBottom: "0%"}}>
       <Icon name="bulb-outline" size={20} color={'blue'}/>
     </View>
       <Text style={{ fontFamily: 'Mont-Heavy', fontSize: '17%', paddingHorizontal: '2%', paddingBottom: '0%'}}>
-            Explore a new interest!
+            Elyse added Cooking as an interest!
           </Text>
          
     </View>
       <View style={{paddingLeft: '6%'}}>
         <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
           <Icon style={{ paddingRight: 5, color:'black' }} name="heart-outline" size={"20%"} ></Icon>
-          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Working with people </Text>
+          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Trying something new! </Text>
         </View>
         <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
           <Icon style={{ paddingRight: 5 }} name="heart-outline" size={"20%"} ></Icon>
-          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Making an influence </Text>
+          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Childhood passion </Text>
         </View>
       </View>
       <View style={{alignContent:'center', alignItems:'center', width: '100%'}}>
         <Image
-        source={require('../assets/educationNode.png')}
+        source={require('../assets/cookingNode.png')}
         style={styles.logo}
         />
       </View>
-      <View style={styles.appButton}>
 
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={{ fontFamily: 'Mont-Heavy', fontSize: '17%', paddingLeft: '2%', paddingBottom: '2%', alignSelf: 'center'}}>
-              Education</Text>
-            <View style={{height: 2, backgroundColor: '#04183D', width: 200, marginBottom: 15, alignSelf: 'center'}} />
-            <Text style={styles.descriptionTitle}> Description </Text>
-            <Text style={styles.description}> The field of education gives you a chance to use your strengths and transfer them to people eager to learn
-            about them. In addition, teaching different things helps you become better in the things you do </Text>
-            <Text style={styles.descriptionTitle}> Common Likes </Text>
-            <Text style={styles.description}> Here is what other users like about tour guiding: </Text>
-            <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
-              <AntDesign style={{ paddingRight: 5}} name="hearto" size={"20%"} ></AntDesign>
-              <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Dealing with people </Text>
-            </View>
-            
-            <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
-            <AntDesign style={{ paddingRight: 5 }} name="hearto" size={"20%"} ></AntDesign>
-              <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Making an influence </Text>
-            </View>
-            <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center', paddingBottom: 12}}>
-            <AntDesign style={{ paddingRight: 5 }} name="hearto" size={"20%"} ></AntDesign>
-              <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Problem solving </Text>
-            </View>
-            
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Hide</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
+
+
+
+
+
+
+
+      {elyseMessage()}
+
+
       
-        <TouchableOpacity onPress={() => setModalVisible(true)} style={styles.leftAppButtonContainer}>
-          <Text style={styles.appButtonText}>Learn More</Text>
-        </TouchableOpacity>
-
-              
 
 
 
-        <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.rightAppButtonContainer}>
-          <Text style={styles.appButtonText}>Add to Profile</Text>
-        </TouchableOpacity>
 
-      </View>
-      <View style={{ alignSelf: 'center', height: 4, backgroundColor: 'grey', width: '90%' }} />
+
+
+
+
+
+
+
+      
+      <View style={{ alignSelf: 'center', height: 4, backgroundColor: 'grey', width: '90%', marginTop: '4%' }} />
 
   </View>
     
@@ -175,7 +248,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: '5%',
     //borderWidth: 1,
     marginBottom: "3%",
-    height:300
+    height:330
 
   },
   index: {
