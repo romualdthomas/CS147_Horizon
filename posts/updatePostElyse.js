@@ -4,19 +4,17 @@ import { useCallback, useState } from 'react';
 import { Alert, StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Button, Image, Pressable, Modal } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import colors from '../assets/colors/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Shapes from '../assets/components/shapes.svg';
-import store from '../screens/store';
 import { AntDesign } from '@expo/vector-icons'; 
-import { useNavigation } from '@react-navigation/native';
+import YellowDot from '../assets/components/yellow_dot.svg';
+
 
 
 
 SplashScreen.preventAutoHideAsync();
 
 
-const RecConPostAlex = ({navigation}) => {
+const UpdatePostElyse = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
     const [fontsLoaded] = useFonts({
@@ -35,7 +33,27 @@ const RecConPostAlex = ({navigation}) => {
   if (!fontsLoaded) {
     return null;
   }
-
+  const interestNode = ({input}) => {
+    return (
+        <Draggable x={70} y={300}>
+            <View style={{
+                width: 150,
+                height: 150,
+                borderRadius: 150 / 2,
+                backgroundColor: '#3BA95B'
+            }} >
+                <Text style={{
+                    fontFamily: 'Mont-Bold',
+                    fontSize: 20,
+                    textAlign: "center",
+                    paddingTop: "40%",
+                    justifyContent: 'center',
+                    margin: 10,
+                }}> {input} </Text>
+            </View>
+        </Draggable>
+    );
+}
 
 
 
@@ -57,32 +75,34 @@ const RecConPostAlex = ({navigation}) => {
 
     
   <View style={styles.container}>
-    <View style={{flexDirection: 'row', alignItems:'center', height: '6%', marginBottom: 8}}>
-    <Icon name="person-add-outline" size={20} color={'blue'}/>
-      <Text style={{ fontFamily: 'Mont-Heavy', fontSize: '17%', paddingHorizontal: '2%', paddingBottom: '2%'}}>
-            You might find <Text style={{fontFamily: 'Mont-Black'}}>Alex</Text> Interesting!
+    <View style={{flexDirection: 'row', alignItems:'center', height: '7%', marginBottom: 8}}>
+      <View style={{alignSelf: 'center', paddingBottom: "0%"}}>
+      <Icon name="bulb-outline" size={20} color={'blue'}/>
+    </View>
+      <Text style={{ fontFamily: 'Mont-Heavy', fontSize: '17%', paddingHorizontal: '2%', paddingBottom: '0%'}}>
+            Explore a new interest!
           </Text>
          
     </View>
       <View style={{paddingLeft: '6%'}}>
         <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
-          <Icon style={{ paddingRight: 5, color:'black' }} name="square" size={"20%"} ></Icon>
-          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Background in SWE </Text>
+          <Icon style={{ paddingRight: 5, color:'black' }} name="heart-outline" size={"20%"} ></Icon>
+          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Working with people </Text>
         </View>
         <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
-          <Icon style={{ paddingRight: 5 }} name="ellipse" size={"20%"} ></Icon>
-          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Interested in HCI </Text>
+          <Icon style={{ paddingRight: 5 }} name="heart-outline" size={"20%"} ></Icon>
+          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Making an influence </Text>
         </View>
       </View>
       <View style={{alignContent:'center', alignItems:'center', width: '100%'}}>
         <Image
-        source={require('../assets/profileAlex.png')}
+        source={require('../assets/educationNode.png')}
         style={styles.logo}
         />
       </View>
       <View style={styles.appButton}>
 
-      {/* <Modal
+      <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
@@ -94,51 +114,58 @@ const RecConPostAlex = ({navigation}) => {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={{ fontFamily: 'Mont-Heavy', fontSize: '17%', paddingLeft: '2%', paddingBottom: '2%', alignSelf: 'center'}}>
-              Rec. Interest Name</Text>
-            <View style={{height: 2, backgroundColor: 'green', width: 200, marginBottom: 15}} />
+              Education</Text>
+            <View style={{height: 2, backgroundColor: '#04183D', width: 200, marginBottom: 15, alignSelf: 'center'}} />
             <Text style={styles.descriptionTitle}> Description </Text>
-            <Text style={styles.description}> LOREMMMMMM IPSUMMMMMM ffsdfasdffsef sfsdvsdfw svsdft svs sisd nsierj sdjfsij sdfnwos.m posekfslmsiroj mnsa </Text>
+            <Text style={styles.description}> The field of education gives you a chance to use your strengths and transfer them to people eager to learn
+            about them. In addition, teaching different things helps you become better in the things you do </Text>
             <Text style={styles.descriptionTitle}> Common Likes </Text>
             <Text style={styles.description}> Here is what other users like about tour guiding: </Text>
             <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
               <AntDesign style={{ paddingRight: 5}} name="hearto" size={"20%"} ></AntDesign>
-              <Text style={{color: 'black', width: "20%", marginRight: 2}} numberOfLines={1}> blala </Text>
+              <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Dealing with people </Text>
             </View>
             
             <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
             <AntDesign style={{ paddingRight: 5 }} name="hearto" size={"20%"} ></AntDesign>
-              <Text style={{color: 'black', width: "20%", marginRight: 2}} numberOfLines={1}> blala </Text>
+              <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Making an influence </Text>
             </View>
             <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center', paddingBottom: 12}}>
             <AntDesign style={{ paddingRight: 5 }} name="hearto" size={"20%"} ></AntDesign>
-              <Text style={{color: 'black', width: "20%", marginRight: 2}} numberOfLines={1}> blala </Text>
+              <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Problem solving </Text>
             </View>
             
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Hide</Text>
             </Pressable>
           </View>
         </View>
-      </Modal> */}
+      </Modal>
       
+        <TouchableOpacity onPress={() => setModalVisible(true)} style={styles.leftAppButtonContainer}>
+          <Text style={styles.appButtonText}>Learn More</Text>
+        </TouchableOpacity>
+
               
 
-        <TouchableOpacity onPress={() => navigation.navigate("RomualdProfile")} style={styles.appButtonContainer}>
-          <Text style={styles.appButtonText}>Visit Alex's profile</Text>
+
+
+        <TouchableOpacity onPress={() => navigation.navigate("LikesTwo")} style={styles.rightAppButtonContainer}>
+          <Text style={styles.appButtonText}>Add to Profile</Text>
         </TouchableOpacity>
 
       </View>
-      <View style={{ alignSelf: 'center', height: 4, backgroundColor: 'grey', width: '90%', }} />
+      <View style={{ alignSelf: 'center', height: 4, backgroundColor: 'grey', width: '90%' }} />
 
   </View>
     
   );
 };
 
-export default RecConPostAlex;
+export default UpdatePostElyse;
 
 const styles = StyleSheet.create({
   container: {
@@ -146,8 +173,10 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     width: '100%',
     paddingHorizontal: '5%',
-    height:350
     //borderWidth: 1,
+    marginBottom: "3%",
+    height:300
+
   },
   index: {
     color:"grey",
@@ -161,11 +190,24 @@ const styles = StyleSheet.create({
     marginRight: "2%",
   },
   logo: {
-    width:'50%',
-    height:150,
+    width:'30%',
+    height:100,
     resizeMode: 'contain'
   },
-  appButtonContainer: {
+  leftAppButtonContainer: {
+    elevation: 8,
+    // backgroundColor: "#34495E",
+    backgroundColor: "grey",
+    borderRadius: '20%',
+    paddingVertical: '5%',
+    paddingHorizontal: "8%",
+    // shadowColor: 'rgba(0, 0, 0, 0.1)',
+    // shadowOpacity: 1,
+    // elevation: 10,
+    // shadowRadius: '2%',
+    // shadowOffset : { width: '-1%', height: '15%'},
+  },
+  rightAppButtonContainer: {
     elevation: 8,
     // backgroundColor: "#34495E",
     backgroundColor: "#34495E",
@@ -175,7 +217,7 @@ const styles = StyleSheet.create({
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 1,
     elevation: 10,
-    shadowRadius: '5%',
+    shadowRadius: '4%',
     shadowOffset : { width: '-1%', height: '15%'},
   },
   appButtonText: {
@@ -200,7 +242,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "orange",
+    backgroundColor: "#EFF1E7",
     borderRadius: 20,
     padding: 35,
     shadowColor: "#000",
@@ -209,9 +251,9 @@ const styles = StyleSheet.create({
       height: 2
     },
     shadowOpacity: 0.25,
-    shadowRadius: 4,
+    shadowRadius: 40,
     elevation: 5,
-    width: '70%'
+    width: '80%'
   },
   button: {
     borderRadius: 20,
@@ -222,7 +264,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F194FF",
   },
   buttonClose: {
-    backgroundColor: "#2196FF",
+    backgroundColor: "#04183D",
   },
   textStyle: {
     color: "white",
@@ -230,11 +272,10 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   descriptionTitle: {
-    marginBottom: 15,
+    marginBottom: 10,
     fontFamily:'Mont-Heavy',
   },
   description: {
     marginBottom: 15,
-    fontFamily:'Mont-Light',
   },
 });

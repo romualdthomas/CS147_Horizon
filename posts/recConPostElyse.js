@@ -16,7 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 SplashScreen.preventAutoHideAsync();
 
 
-const RecConPostAlex = ({navigation}) => {
+const RecConPostElyse = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
     const [fontsLoaded] = useFonts({
@@ -59,24 +59,24 @@ const RecConPostAlex = ({navigation}) => {
   <View style={styles.container}>
     <View style={{flexDirection: 'row', alignItems:'center', height: '6%', marginBottom: 8}}>
     <Icon name="person-add-outline" size={20} color={'blue'}/>
-      <Text style={{ fontFamily: 'Mont-Heavy', fontSize: '17%', paddingHorizontal: '2%', paddingBottom: '2%'}}>
-            You might find <Text style={{fontFamily: 'Mont-Black'}}>Alex</Text> Interesting!
+      <Text style={{ fontFamily: 'Mont-Heavy', fontSize: '17%', paddingHorizontal: '2%'}}>
+            You might find <Text style={{fontFamily: 'Mont-Black'}}>Elyse</Text> Interesting!
           </Text>
          
     </View>
       <View style={{paddingLeft: '6%'}}>
         <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
           <Icon style={{ paddingRight: 5, color:'black' }} name="square" size={"20%"} ></Icon>
-          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Background in SWE </Text>
+          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Background in Education  </Text>
         </View>
         <View style={{flexDirection:"row", alignContent: 'center', alignItems: 'center'}}>
           <Icon style={{ paddingRight: 5 }} name="ellipse" size={"20%"} ></Icon>
-          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Interested in HCI </Text>
+          <Text style={{color: 'black', marginRight: 2}} numberOfLines={1}> Interested in Diversity </Text>
         </View>
       </View>
       <View style={{alignContent:'center', alignItems:'center', width: '100%'}}>
         <Image
-        source={require('../assets/profileAlex.png')}
+        source={require('../assets/profileElyse.png')}
         style={styles.logo}
         />
       </View>
@@ -126,19 +126,19 @@ const RecConPostAlex = ({navigation}) => {
       
               
 
-        <TouchableOpacity onPress={() => navigation.navigate("RomualdProfile")} style={styles.appButtonContainer}>
-          <Text style={styles.appButtonText}>Visit Alex's profile</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("ElyseProfile")} style={styles.appButtonContainer}>
+          <Text style={styles.appButtonText}>Visit Elyse's profile</Text>
         </TouchableOpacity>
 
       </View>
-      <View style={{ alignSelf: 'center', height: 4, backgroundColor: 'grey', width: '90%', }} />
+      <View style={{ alignSelf: 'center', height: 4, backgroundColor: 'grey', width: '90%'}} />
 
   </View>
     
   );
 };
 
-export default RecConPostAlex;
+export default RecConPostElyse;
 
 const styles = StyleSheet.create({
   container: {
@@ -146,8 +146,9 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     width: '100%',
     paddingHorizontal: '5%',
-    height:350
     //borderWidth: 1,
+    marginBottom: "1%",
+    height:400
   },
   index: {
     color:"grey",
@@ -162,7 +163,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width:'50%',
-    height:150,
+    height:200,
     resizeMode: 'contain'
   },
   appButtonContainer: {
